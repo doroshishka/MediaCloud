@@ -25,7 +25,8 @@ def datelist(beginDate, endDate):
     date_l=[dt.strftime(x,'%Y-%m-%d') for x in list(pd.date_range(start=beginDate, end=endDate))]
     return date_l
 
-****Build time_list(day_list) and month_list*****
+****Build time_list(day_list) and month_list.
+
 time_list = datelist(datetime.date(start_date[0],start_date[1],start_date[2]),datetime.date(end_date[0],end_date[1],end_date[2]))
 month_list = []
 for t in range(start_date[0],end_date[0]+1):
@@ -50,8 +51,7 @@ for outlet in outlets:
         for x in relevant_outlet:
             print (x['name'])
 						
-****Here are 5 parameters of the function. The first one is the start date and second one is the end_date.
-****Outlet_id is a factor of the list outlets_is.
+****Here are 5 parameters of the function. The first one is the start date and second one is the end_date. Outlet_id is a factor of the list outlets_is.
 
 def store(start_date,end_date,outlet_id,keyword_list,monthornot):
     if monthornot == 1:
