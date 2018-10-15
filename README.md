@@ -1,7 +1,7 @@
-# MediaCloud - scraping content of the articles
+# MediaCloud - searching for relevant articles using outlet/keywords/time period and scraping content of the searched articles
 This repository contains codes for Python and R to scrape content of news articles using Media Cloud platform (https://mediacloud.org). First, you have to generate a csv file with URLs from MediaCloud based on your search criteria using Python code. To get the content of the articles, you can use the following R code.
 
-******Python code - getting URLs of the articles********.
+#Python code - getting URLs of the articles.
 
 import datetime
 from datetime import datetime as dt
@@ -16,7 +16,7 @@ start_date = [2012,1,1]
 end_date = [2014,12,31]
 key_word = ['second AND amendment', '2nd AND amendment', 'gun AND rights', '(National AND rifle AND association) OR (nra)', 'gun AND control', 'gun AND laws','background AND check', 'gun AND regulation', 'mass AND shooting','gun AND violence']
 
-***Input the api_key and call the api
+***Input the api_key and call the api****
 mc = mediacloud.api.MediaCloud(api_key)
 
 def datelist(beginDate, endDate):
@@ -24,7 +24,7 @@ def datelist(beginDate, endDate):
     date_l=[dt.strftime(x,'%Y-%m-%d') for x in list(pd.date_range(start=beginDate, end=endDate))]
     return date_l
 
-# Build time_list(day_list) and month_list
+****Build time_list(day_list) and month_list*****
 time_list = datelist(datetime.date(start_date[0],start_date[1],start_date[2]),datetime.date(end_date[0],end_date[1],end_date[2]))
 month_list = []
 for t in range(start_date[0],end_date[0]+1):
@@ -34,7 +34,7 @@ for t in range(start_date[0],end_date[0]+1):
         else:
             month_list.append(str(t) + str(x))
 
-##  Get the media_id of each outlet
+*****Get the media_id of each outlet******
 outlets_id = []
 for outlet in outlets:
     l = len(outlets_id)
@@ -48,8 +48,8 @@ for outlet in outlets:
         for x in relevant_outlet:
             print (x['name'])
 						
-# Here are 5 parameters of the function. The first one is the start date and second one is the end_date.
-# Outlet_id is a factor of the list outlets_is
+****Here are 5 parameters of the function. The first one is the start date and second one is the end_date.*****
+****Outlet_id is a factor of the list outlets_is*****
 def store(start_date,end_date,outlet_id,keyword_list,monthornot):
     if monthornot == 1:
         workbook = xlsxwriter.Workbook(str(outlets[outlets_id.index(outlet_id)]) + '  month.xlsx')
@@ -114,7 +114,7 @@ def main():
 if __name__ == '__main__':
     main()
 
-******R code - scraping the content of the articles********.
+#R code - scraping the content of the articles.
 
 library(dplyr)
 library(stringr)
