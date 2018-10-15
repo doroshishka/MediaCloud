@@ -16,7 +16,7 @@ start_date = [2012,1,1]
 end_date = [2014,12,31]
 key_word = ['second AND amendment', '2nd AND amendment', 'gun AND rights', '(National AND rifle AND association) OR (nra)', 'gun AND control', 'gun AND laws','background AND check', 'gun AND regulation', 'mass AND shooting','gun AND violence']
 
-# Input the api_key and call the api
+***Input the api_key and call the api
 mc = mediacloud.api.MediaCloud(api_key)
 
 def datelist(beginDate, endDate):
