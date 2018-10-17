@@ -50,10 +50,7 @@ for outlet in outlets:
         print ('We can not find '+outlet+', what we can get:')
         for x in relevant_outlet:
             print (x['name'])
-```						
-###### 5 parameters of the function. The first one is the start date and second one is the end_date. Outlet_id is a factor of the list outlets_is.
-```
-```
+					
 def store(start_date,end_date,outlet_id,keyword_list,monthornot):
     if monthornot == 1:
         workbook = xlsxwriter.Workbook(str(outlets[outlets_id.index(outlet_id)]) + '  month.xlsx')
