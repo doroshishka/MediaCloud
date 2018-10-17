@@ -50,7 +50,9 @@ for outlet in outlets:
         print ('We can not find '+outlet+', what we can get:')
         for x in relevant_outlet:
             print (x['name'])
-					
+```
+###### This function will output a .xlsx file which contains the count data of a particular outlet. Here are 5 parameters of the function. The first one is the start date and second one is the end_date. Outlet_id is a factor of the list outlets_is. keyword_list is the list of the keywords. monthornot. If monthornot == 1, you will get each month's count. If not, you will get each day's count.
+```
 def store(start_date,end_date,outlet_id,keyword_list,monthornot):
     if monthornot == 1:
         workbook = xlsxwriter.Workbook(str(outlets[outlets_id.index(outlet_id)]) + '  month.xlsx')
